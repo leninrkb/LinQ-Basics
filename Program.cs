@@ -56,6 +56,31 @@ foreach (var item in newNames)
     
 }
 
+var oddNumbers = from n in numbers 
+                where n % 1 == 0
+                select n;
+
+Console.WriteLine(string.Join(", ", oddNumbers));
+
+// lambda expressions
+oddNumbers = numbers.Where(n => n % 1 == 0);
+Console.WriteLine(string.Join(", ", oddNumbers));
+
+var youngestPeople = people.Where(p => p.age < 20);
+foreach(var item in youngestPeople){
+    Console.WriteLine($"name: {item.name} age: {item.age}");
+}
+
+var youngestPeople2 = people.Where(p => p.age < 20).Select(p => p.age);
+foreach(var item in youngestPeople2){
+    Console.WriteLine($"age: {item}");
+}
+
+List<int> youngestPeopleList = people.Where(p => p.age < 20).Select(p => p.age).ToList();
+Console.WriteLine(string.Join(", ",youngestPeopleList));
+youngestPeopleList.ForEach(p => Console.WriteLine(p));
+
+
 // objects
 public enum Gender{
     Male,
