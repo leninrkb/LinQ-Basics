@@ -1,0 +1,15 @@
+/home/lenin/Documents/GitHub/LinQ-Basics/bin/Debug/net8.0/LinQ-Basics
+/home/lenin/Documents/GitHub/LinQ-Basics/bin/Debug/net8.0/LinQ-Basics.deps.json
+/home/lenin/Documents/GitHub/LinQ-Basics/bin/Debug/net8.0/LinQ-Basics.runtimeconfig.json
+/home/lenin/Documents/GitHub/LinQ-Basics/bin/Debug/net8.0/LinQ-Basics.dll
+/home/lenin/Documents/GitHub/LinQ-Basics/bin/Debug/net8.0/LinQ-Basics.pdb
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.GeneratedMSBuildEditorConfig.editorconfig
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.AssemblyInfoInputs.cache
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.AssemblyInfo.cs
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.csproj.CoreCompileInputs.cache
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.sourcelink.json
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.dll
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/refint/LinQ-Basics.dll
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.pdb
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/LinQ-Basics.genruntimeconfig.cache
+/home/lenin/Documents/GitHub/LinQ-Basics/obj/Debug/net8.0/ref/LinQ-Basics.dll
