@@ -81,6 +81,35 @@ Console.WriteLine(string.Join(", ",youngestPeopleList));
 youngestPeopleList.ForEach(p => Console.WriteLine(p));
 
 
+// group by 
+var groupPeople = from p in people
+            where p.age > 21
+            group p by p.gender;
+foreach (var item in groupPeople)
+{   
+    Console.WriteLine(item.Key);
+    foreach (var person in item)
+    {
+        Console.WriteLine($"name: {person.name} age:{person.age}");
+    }
+}
+
+var alphabetical = from p in people
+                    group p by p.name[0];
+
+
+
+
+foreach (var item in alphabetical)
+{   
+    Console.WriteLine(item.Key);
+    foreach (var person in item)
+    {
+        Console.WriteLine($"name: {person.name} age:{person.age}");
+    }
+}
+
+
 // objects
 public enum Gender{
     Male,
