@@ -159,6 +159,65 @@ foreach (var item in multikey)
 }
 
 
+// join 
+List<Cat> cats = new(){
+    new Cat("purr", 2, Gender.Female),
+    new Cat("lala", 3, Gender.Female),
+    new Cat("lalo", 1, Gender.Female),
+    new Cat("oto", 2, Gender.Female),
+    new Cat("morris", 4, Gender.Female),
+    new Cat("bibi", 5, Gender.Female),
+    new Cat("snow", 4, Gender.Female),
+    new Cat("tripi", 3, Gender.Female),
+    new Cat("piti", 2, Gender.Male),
+    new Cat("zaco", 4, Gender.Male),
+    new Cat("koko", 5, Gender.Male),
+    new Cat("guu", 7, Gender.Male),
+    new Cat("fyu", 6, Gender.Male),
+    new Cat("kal", 4, Gender.Male),
+    new Cat("wonk", 5, Gender.Male),
+    new Cat("tehte", 5, Gender.Male),
+    new Cat("jojo", 7, Gender.Male),
+    new Cat("naij", 8, Gender.Male),
+};
+
+Console.WriteLine("inner join ...............");
+
+var innerjoin = people.Join(cats, p => p.gender, c => c.gender, (p,c) => new{
+    owner = p.name,
+    cat = c.name,
+    catAge = c.age,
+});
+
+foreach (var item in innerjoin)
+{   
+    
+    Console.WriteLine($"name: {item.owner} cat:{item.cat}");
+    
+}
+
+
+Console.WriteLine("inner join 2 .........");
+var innerjoin2 = from p in people
+                join c in cats on p.gender equals c.gender
+                select new {
+                    owner = p.name,
+                    cat = c.name,
+                };
+
+foreach (var item in innerjoin2)
+{   
+    Console.WriteLine($"name: {item.owner} cat:{item.cat}");
+}
+
+// filters
+Console.WriteLine("filters.......");
+
+object[] objs = {111, 123, new List<Object>{345, 455, 234, "lalala", "dead", new List<int>{888, 999}}, new List<int>{66,55,44,33}, "fff", "sss", "aaa", 123, 123.23};
+
+
+var filtered = objs.OfType<int>();
+Console.WriteLine(string.Join(", ",filtered));
 
 
 // objects
@@ -175,6 +234,18 @@ public class Person{
     public Person(string name, int number, int age, Gender gender){
         this.name = name;
         this.number = number;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+
+public class Cat{
+    public string name;
+    public int age;
+    public Gender gender;
+
+    public Cat(string name, int age, Gender gender){
+        this.name = name;
         this.age = age;
         this.gender = gender;
     }
