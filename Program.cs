@@ -32,8 +32,13 @@ var namesWith_A = from name in names
 Console.WriteLine(string.Join(", ", namesWith_A));
 
 List<Person> people = new(){
-    new Person("sana", 60, 23, Gender.Male),
-    new Person("lenin", 55, 22, Gender.Female),
+    new Person("sana", 60, 23, Gender.Female),
+    new Person("lenin", 55, 22, Gender.Male),
+    new Person("sss", 55, 22, Gender.Male),
+    new Person("dd", 55, 22, Gender.Male),
+    new Person("aaaaaa", 55, 22, Gender.Male),
+    new Person("ggggg", 55, 22, Gender.Male),
+    new Person("zxzxzx", 55, 22, Gender.Male),
     new Person("hayase", 55, 21, Gender.Female),
     new Person("tohka", 55, 23, Gender.Female),
     new Person("hiyori", 54, 25, Gender.Female),
@@ -108,6 +113,52 @@ foreach (var item in alphabetical)
         Console.WriteLine($"name: {person.name} age:{person.age}");
     }
 }
+
+var byGender = people.GroupBy(p => (
+    p.gender
+));
+
+foreach (var item in byGender)
+{   
+    Console.WriteLine(item.Key);
+    foreach (var person in item)
+    {
+        Console.WriteLine($"name: {person.name} gender:{person.gender}");
+    }
+}
+
+
+Console.WriteLine("order alphabetical, order by letter .....");
+
+var byGender2 = people.OrderBy(p => (
+    p.name[0]
+)).GroupBy(p => (
+    p.name[0]
+));
+foreach (var item in byGender2)
+{   
+    Console.WriteLine(item.Key);
+    foreach (var person in item)
+    {
+        Console.WriteLine($"name: {person.name} gender:{person.gender}");
+    }
+}
+
+// mulitkey
+
+var multikey = people.GroupBy(p => new {
+    p.gender, p.age
+}).OrderBy(p => p.Count());
+foreach (var item in multikey)
+{   
+    Console.WriteLine(item.Key);
+    foreach (var person in item)
+    {
+        Console.WriteLine($"name: {person.name} gender:{person.gender}");
+    }
+}
+
+
 
 
 // objects
